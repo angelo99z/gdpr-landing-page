@@ -11,17 +11,15 @@ export default function Footer() {
       links: [
         { labelKey: "footer.features", href: "#features" },
         { labelKey: "footer.pricing", href: "#pricing" },
-        { labelKey: "footer.changelog", href: "#" },
-        { labelKey: "footer.status", href: "#" },
+        { labelKey: "nav.testimonials", href: "#testimonials" },
+        { labelKey: "nav.faq", href: "#faq" },
       ],
     },
     {
       labelKey: "footer.company",
       links: [
-        { labelKey: "footer.about", href: "#" },
-        { labelKey: "footer.blog", href: "#" },
-        { labelKey: "footer.careers", href: "#" },
-        { labelKey: "footer.contact", href: "#" },
+        { labelKey: "nav.faq", href: "#faq" },
+        { labelKey: "footer.contact", href: "mailto:hello@clearconsent.eu" },
       ],
     },
     {

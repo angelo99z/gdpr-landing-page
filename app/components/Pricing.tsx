@@ -72,7 +72,7 @@ export default function Pricing() {
               ))}
             </ul>
             <a
-              href="#"
+              href="#faq"
               className="block text-center py-3 px-6 rounded-full border-2 border-blue-600 text-blue-600 font-semibold text-sm hover:bg-blue-50 transition-colors"
             >
               {t("pricing.starter.cta")}
@@ -105,7 +105,7 @@ export default function Pricing() {
               ))}
             </ul>
             <a
-              href="#"
+              href="#faq"
               className="block text-center py-3 px-6 rounded-full bg-white text-blue-600 font-semibold text-sm hover:bg-blue-50 transition-colors shadow-md"
             >
               {t("pricing.business.cta")}
@@ -132,7 +132,7 @@ export default function Pricing() {
               ))}
             </ul>
             <a
-              href="#"
+              href="mailto:sales@clearconsent.eu"
               className="block text-center py-3 px-6 rounded-full border-2 border-slate-900 text-slate-900 font-semibold text-sm hover:bg-slate-50 transition-colors"
             >
               {t("pricing.enterprise.cta")}
