@@ -74,6 +74,7 @@ const translations: Record<Language, Record<string, string>> = {
     "pricing.enterprise.price": "Custom",
     "pricing.enterprise.desc": "Tailored solutions for large organizations.",
     "pricing.enterprise.cta": "Contact Sales",
+    "pricing.cta.sent": "We'll be in touch!",
 
     // Testimonials
     "testimonials.badge": "Trusted Across Europe",
@@ -196,6 +197,7 @@ const translations: Record<Language, Record<string, string>> = {
     "pricing.enterprise.price": "Individuell",
     "pricing.enterprise.desc": "Maßgeschneiderte Lösungen für große Unternehmen.",
     "pricing.enterprise.cta": "Vertrieb kontaktieren",
+    "pricing.cta.sent": "Wir melden uns!",
 
     // Testimonials
     "testimonials.badge": "Vertrauen in ganz Europa",

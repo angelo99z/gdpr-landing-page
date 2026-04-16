@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useRef } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 
 const starterFeatures = [
@@ -34,6 +35,14 @@ const enterpriseFeatures = [
 
 export default function Pricing() {
   const { t } = useLanguage();
+  const [clicked, setClicked] = useState<"starter" | "business" | null>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleTrialClick = (plan: "starter" | "business") => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    setClicked(plan);
+    timerRef.current = setTimeout(() => setClicked(null), 2500);
+  };
 
   return (
     <section id="pricing" className="py-24 bg-white">
@@ -71,12 +80,25 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
-            <a
-              href="#faq"
-              className="block text-center py-3 px-6 rounded-full border-2 border-blue-600 text-blue-600 font-semibold text-sm hover:bg-blue-50 transition-colors"
+            <button
+              onClick={() => handleTrialClick("starter")}
+              className={`flex items-center justify-center gap-2 py-3 px-6 rounded-full border-2 font-semibold text-sm transition-all ${
+                clicked === "starter"
+                  ? "border-emerald-500 bg-emerald-50 text-emerald-700"
+                  : "border-blue-600 text-blue-600 hover:bg-blue-50"
+              }`}
             >
-              {t("pricing.starter.cta")}
-            </a>
+              {clicked === "starter" ? (
+                <>
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {t("pricing.cta.sent")}
+                </>
+              ) : (
+                t("pricing.starter.cta")
+              )}
+            </button>
           </div>
 
           {/* Business — highlighted */}
@@ -104,12 +126,25 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
-            <a
-              href="#faq"
-              className="block text-center py-3 px-6 rounded-full bg-white text-blue-600 font-semibold text-sm hover:bg-blue-50 transition-colors shadow-md"
+            <button
+              onClick={() => handleTrialClick("business")}
+              className={`flex items-center justify-center gap-2 py-3 px-6 rounded-full font-semibold text-sm transition-all shadow-md ${
+                clicked === "business"
+                  ? "bg-emerald-100 text-emerald-700"
+                  : "bg-white text-blue-600 hover:bg-blue-50"
+              }`}
             >
-              {t("pricing.business.cta")}
-            </a>
+              {clicked === "business" ? (
+                <>
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {t("pricing.cta.sent")}
+                </>
+              ) : (
+                t("pricing.business.cta")
+              )}
+            </button>
           </div>
 
           {/* Enterprise */}
